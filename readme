@@ -1,0 +1,439 @@
+# Step 1: Verify Node.js Installation
+
+Before creating a TypeScript project, make sure Node.js is installed.
+
+Open your terminal and run:
+
+```bash
+node -v
+npm -v
+```
+
+Expected output:
+
+```bash
+v22.x.x
+10.x.x
+```
+
+If Node.js is not installed, download it from:
+
+[Node.js Official Website](https://nodejs.org?utm_source=chatgpt.com)
+
+---
+
+# Step 2: Create a New Project Folder
+
+Create a folder for your TypeScript learning project.
+
+```bash
+mkdir typescript-learning
+cd typescript-learning
+```
+
+Verify current directory:
+
+```bash
+pwd
+```
+
+---
+
+# Step 3: Initialize a Node.js Project
+
+Generate a `package.json` file.
+
+```bash
+npm init -y
+```
+
+This creates:
+
+```text
+typescript-learning
+└── package.json
+```
+
+Example:
+
+```json
+{
+  "name": "typescript-learning",
+  "version": "1.0.0"
+}
+```
+
+---
+
+# Step 4: Install TypeScript
+
+Install TypeScript as a development dependency.
+
+```bash
+npm install --save-dev typescript
+```
+
+Verify installation:
+
+```bash
+npx tsc --version
+```
+
+Example output:
+
+```bash
+Version 5.x.x
+```
+
+---
+
+# Step 5: Generate TypeScript Configuration
+
+Create a `tsconfig.json` file.
+
+```bash
+npx tsc --init
+```
+
+Project structure:
+
+```text
+typescript-learning
+├── node_modules
+├── package.json
+└── tsconfig.json
+```
+
+---
+
+# Step 6: Configure tsconfig.json
+
+Open `tsconfig.json` and replace its contents with:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}
+```
+
+### Explanation
+
+| Option          | Purpose                      |
+| --------------- | ---------------------------- |
+| target          | JavaScript version generated |
+| module          | Module system used           |
+| rootDir         | TypeScript source folder     |
+| outDir          | Compiled JavaScript folder   |
+| strict          | Enables strict type checking |
+| esModuleInterop | Better CommonJS support      |
+| skipLibCheck    | Faster compilation           |
+
+---
+
+# Step 7: Create Source Folder
+
+Create a source directory.
+
+```bash
+mkdir src
+```
+
+Project structure:
+
+```text
+typescript-learning
+├── src
+├── node_modules
+├── package.json
+└── tsconfig.json
+```
+
+---
+
+# Step 8: Create Your First TypeScript File
+
+Create:
+
+```bash
+touch src/index.ts
+```
+
+Add:
+
+```typescript
+const message: string = "Hello TypeScript";
+
+console.log(message);
+```
+
+---
+
+# Step 9: Compile TypeScript
+
+Run:
+
+```bash
+npx tsc
+```
+
+This creates:
+
+```text
+dist/
+└── index.js
+```
+
+Generated JavaScript:
+
+```javascript
+const message = "Hello TypeScript";
+console.log(message);
+```
+
+---
+
+# Step 10: Execute the Generated JavaScript
+
+Run:
+
+```bash
+node dist/index.js
+```
+
+Output:
+
+```bash
+Hello TypeScript
+```
+
+---
+
+# Step 11: Add Build Script
+
+Open `package.json`.
+
+Replace scripts section:
+
+```json
+{
+  "scripts": {
+    "build": "tsc"
+  }
+}
+```
+
+Now compile using:
+
+```bash
+npm run build
+```
+
+---
+
+# Step 12: Add Start Script
+
+Update scripts:
+
+```json
+{
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  }
+}
+```
+
+Run:
+
+```bash
+npm start
+```
+
+---
+
+# Step 13: Install ts-node (Optional but Recommended)
+
+Normally:
+
+```text
+TypeScript -> Compile -> JavaScript -> Run
+```
+
+With `ts-node`:
+
+```text
+TypeScript -> Run Directly
+```
+
+Install:
+
+```bash
+npm install --save-dev ts-node
+```
+
+Run:
+
+```bash
+npx ts-node src/index.ts
+```
+
+Output:
+
+```bash
+Hello TypeScript
+```
+
+---
+
+# Step 14: Add Development Script
+
+Update scripts:
+
+```json
+{
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  }
+}
+```
+
+Run:
+
+```bash
+npm run dev
+```
+
+---
+
+# Step 15: Install Auto-Restart Development Tool
+
+Install:
+
+```bash
+npm install --save-dev nodemon
+```
+
+Update scripts:
+
+```json
+{
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon --exec ts-node src/index.ts"
+  }
+}
+```
+
+Now run:
+
+```bash
+npm run dev
+```
+
+Whenever you save a `.ts` file, the application restarts automatically.
+
+---
+
+# Step 16: Recommended Final Folder Structure
+
+```text
+typescript-learning/
+│
+├── src/
+│   ├── index.ts
+│   ├── basics/
+│   ├── interfaces/
+│   ├── classes/
+│   ├── generics/
+│   ├── enums/
+│   └── advanced/
+│
+├── dist/
+│
+├── node_modules/
+│
+├── package.json
+├── package-lock.json
+└── tsconfig.json
+```
+
+---
+
+# Step 17: Create a Learning Roadmap Inside This Project
+
+As you learn, create one file per topic:
+
+```text
+src/
+├── 01-variables.ts
+├── 02-functions.ts
+├── 03-arrays.ts
+├── 04-objects.ts
+├── 05-unions.ts
+├── 06-interfaces.ts
+├── 07-types.ts
+├── 08-enums.ts
+├── 09-generics.ts
+├── 10-classes.ts
+├── 11-inheritance.ts
+├── 12-utility-types.ts
+├── 13-decorators.ts
+├── 14-modules.ts
+└── 15-advanced-types.ts
+```
+
+This approach turns the project into a complete TypeScript playground where you can experiment with every feature independently.
+
+---
+
+# Final Command Summary
+
+```bash
+mkdir typescript-learning
+
+cd typescript-learning
+
+npm init -y
+
+npm install --save-dev typescript
+
+npx tsc --init
+
+mkdir src
+
+touch src/index.ts
+
+npm install --save-dev ts-node nodemon
+
+npm run dev
+```
+
+Since you're already a JavaScript trainer, I would recommend learning TypeScript in this order:
+
+1. Type Annotations
+2. Type Inference
+3. Union Types
+4. Interfaces
+5. Type Aliases
+6. Generics
+7. Utility Types
+8. Classes
+9. Advanced Types
+10. Declaration Files (`.d.ts`)
+11. TypeScript Compiler Internals
+12. Building a small Node.js + Express API in TypeScript
+13. Building a React application with TypeScript
+14. Building a NestJS application with TypeScript
+
+This sequence takes you from "JavaScript developer" to "production-grade TypeScript developer" with a solid understanding of how TypeScript works under the hood.
