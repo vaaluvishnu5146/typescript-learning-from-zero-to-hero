@@ -35,4 +35,11 @@ interface Todo {
   completed: boolean;
 }
 
-export { User, SuperUser, Todo };
+interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
+export { User, SuperUser, Todo, Post };

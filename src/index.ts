@@ -1,3 +1,3 @@
-import { fetchTodos } from "./Interfacelecture";
+import { fetchTodos, fetchPosts } from "./Interfacelecture";
 
-fetchTodos();
+fetchPosts();
