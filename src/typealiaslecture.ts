@@ -24,8 +24,10 @@ const idhalinOram: Song = {
   title: "Idhalin Oram",
   duration: 300,
   album: "3",
-  singer: [""],
 };
+
+// Album property is read-only
+// idhalinOram.album = "Anirudh";
 
 const VishnuData: User = {
   name: "Vishnu Vardhan B",

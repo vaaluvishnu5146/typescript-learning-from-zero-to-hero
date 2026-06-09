@@ -12,8 +12,8 @@ type Book = {
 type Song = {
   title: string;
   duration: number;
-  album: string;
-  singer: string[];
+  readonly album: string;
+  singer?: string[];
 };
 
 type User = {

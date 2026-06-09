@@ -4,9 +4,9 @@
  * An Interface is an way to describe the object shapes
  */
 interface User {
-  name: string;
-  age: number;
-  address: string;
+  readonly name: string;
+  readonly age: number;
+  readonly address: string;
 }
 
 interface User {
@@ -17,7 +17,7 @@ interface User {
  * Extending = Helps to create a new Interface by extending existing Interface
  */
 interface SuperUser extends User {
-  powers: string[];
+  powers?: string[];
 }
 
 /**
