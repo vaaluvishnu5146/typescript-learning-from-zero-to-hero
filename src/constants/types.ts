@@ -1,3 +1,7 @@
+/**
+ * Type Alias
+ */
+
 type Book = {
   title: string;
   price: number;
@@ -29,4 +33,25 @@ type Address = {
   pincode: number;
 };
 
-export { Book, Song, User };
+type dummy = {
+  name: string;
+};
+
+/**
+ * Extending = Helps to create a new types by extending existing type
+ */
+type dummyExtended = dummy & {
+  age: number;
+};
+
+/**
+ * When do i need Type?
+ * 1. Defining simple datatype
+ * 2. Complex type definitions
+ * 3. Union Types
+ * 4. Tuple Types
+ * 5. Function Types
+ * 6. Conditional Types
+ */
+
+export { Book, Song, User, dummy, dummyExtended };
