@@ -28,4 +28,11 @@ interface SuperUser extends User {
  * 3. DTO - Data Transfer Object
  */
 
-export { User, SuperUser };
+interface Todo {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+export { User, SuperUser, Todo };
