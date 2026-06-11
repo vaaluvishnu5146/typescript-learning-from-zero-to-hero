@@ -54,4 +54,6 @@ type dummyExtended = dummy & {
  * 6. Conditional Types
  */
 
-export { Book, Song, User, dummy, dummyExtended };
+type AddFn = (a: number, b: number) => number;
+
+export { Book, Song, User, dummy, dummyExtended, AddFn };
